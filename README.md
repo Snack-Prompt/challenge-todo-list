@@ -43,7 +43,7 @@ Create a basic REST API in Golang using the Fiber framework and PostgreSQL as th
 - Add support for filtering tasks by status (pending or completed).
 - Add Unit Tests.
 - Add Dockerfile.
-- Postman Collection with all endpoints.
+- Create a Postman Collection with all endpoints.
 
 ## How to Submit:
 1. Fork this repository.
