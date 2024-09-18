@@ -50,3 +50,4 @@ Create a basic REST API in Golang using the Fiber framework and PostgreSQL as th
 2. Clone the forked repository to your machine:
    ```bash
    git clone https://github.com/Snack-Prompt/challenge-todo-list.git
+3. Open a Pull Request to this repostory.
