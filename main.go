@@ -12,9 +12,8 @@ func main() {
 	app := fiber.New()
 
 	config.ConnectDatabase()
-	config.DB.AutoMigrate(&models.Task{}, &models.Comment{})
+	config.DB.AutoMigrate(&models.Task{})
 	routes.TaskRoutes(app)
-	routes.CommentRoutes(app)
 
 	app.Listen(":3000")
 }
