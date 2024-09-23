@@ -15,7 +15,13 @@ This project is a REST API for managing a to-do list system. The backend was dev
  ```bash
    docker-compose up --build
   ```
-  
+## Running Tests
+
+To run the tests for the controllers, use the following command:
+
+ ```bash
+   go test ./controllers
+  ```
   ## Usage
 
 Once the server is set up and running, the API will be available to receive requests from the frontend. You can use tools like [Postman](https://www.postman.com/) or [Insomnia](https://insomnia.rest/) to test the endpoints.
