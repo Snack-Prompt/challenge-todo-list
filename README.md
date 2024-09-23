@@ -1,53 +1,31 @@
 # TODO List Challenge
 
-## Test Objective:
-Create a basic REST API in Golang using the Fiber framework and PostgreSQL as the database. The API will manage a "to-do list" system.
 
-## Requirements:
+This project is a REST API for managing a to-do list system. The backend was developed using Golang, Gorm, Fiber and PostgreSQL as the database.
 
-### 1. Setup and Configuration:
-- Install Fiber as the framework.
-- Set up PostgreSQL with a table for tasks.
+## Prerequisites
 
-### 2. API Functionalities:
-- **Create Task**: An endpoint to create a new task.
-  - Method: `POST /tasks`
-  - Request body: `{"title": "Learn Golang", "description": "Study Goroutines", "status": "pending"}`
+- [Golang](https://go.dev/) installed.
+- [Docker](https://www.docker.com/) installed.
 
-- **List Tasks**: An endpoint to list all tasks.
-  - Method: `GET /tasks`
-  - Response: JSON containing all tasks.
+## Project Setup
 
-- **Update Task**: An endpoint to update the status of a task.
-  - Method: `PUT /tasks/:id`
-  - Request body: `{"status": "completed"}`
+1. **Build and run the application using Docker:**
 
-- **Delete Task**: An endpoint to delete a task.
-  - Method: `DELETE /tasks/:id`
+ ```bash
+   docker-compose up --build
+  ```
+## Running Tests
 
-### 3. Database:
-- Create a `tasks` table with the following fields:
-  - `id` (UUID)
-  - `title` (string)
-  - `description` (string)
-  - `status` (string) - possible values: `pending`, `completed`
-  - `created_at` (timestamp)
-  - `updated_at` (timestamp)
+To run the tests for the controllers, use the following command:
 
-### 4. Validation:
-- Ensure required fields are present when creating or updating a task.
-- Return appropriate error responses (400, 404) when something goes wrong (e.g., trying to update or delete a non-existing task).
+ ```bash
+   go test ./controllers
+  ```
+  ## Usage
 
-### 5. Extras (Optional):
-- Add pagination to the task listing endpoint.
-- Add support for filtering tasks by status (pending or completed).
-- Add Unit Tests.
-- Add Dockerfile.
-- Create a Postman Collection with all endpoints.
+Once the server is set up and running, the API will be available to receive requests from the frontend. You can use tools like [Postman](https://www.postman.com/) or [Insomnia](https://insomnia.rest/) to test the endpoints.
 
-## How to Submit:
-1. Fork this repository.
-2. Clone the forked repository to your machine:
-   ```bash
-   git clone https://github.com/Snack-Prompt/challenge-todo-list.git
-3. Open a Pull Request to this repostory.
+## License
+
+This project is licensed under the [MIT License](LICENSE).

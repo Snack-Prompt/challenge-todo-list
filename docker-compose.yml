@@ -1,0 +1,28 @@
+version: "3.4"
+
+services:
+  db:
+    image: postgres:11.0-alpine
+    container_name: postgres-todo-go
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-todo-go}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_MAX_CONNECTIONS: 2000
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  backend:
+    build: .
+    container_name: todo-backend-go
+    environment:
+      DATABASE_URL: "postgresql://postgres:postgres@db:5432/todo-go"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+volumes:
+  postgres-data:
